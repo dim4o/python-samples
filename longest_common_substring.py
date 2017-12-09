@@ -52,9 +52,9 @@ def find_longest_common_substring(str_1, str_2):
 def print_longest_common_substring(str_1, str_2):
     longest_substring = find_longest_common_substring(str_1, str_2)
     if len(longest_substring) > 0:
-        print "Longest common substring between '{}' and '{}': '{}'.".format(str_1, str_2, longest_substring)
+        print("Longest common substring between '{}' and '{}': '{}'.".format(str_1, str_2, longest_substring))
     else:
-        print "No solution."
+        print("No solution.")
 
 
 # test

@@ -62,7 +62,7 @@ def is_on_top(box_1, box_2):
 
 
 def print_result(result):
-    print "Max height: {},  Boxes: {}".format(result[0], result[1])
+    print("Max height: {},  Boxes: {}".format(result[0], result[1]))
 
 
 # test

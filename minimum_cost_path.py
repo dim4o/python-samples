@@ -53,7 +53,7 @@ def find_min_cost_path(matrix):
 def print_min_cost_path(matrix):
     min_path = find_min_cost_path(matrix)
     path_sum = sum(i for i in min_path)
-    print "Minimum cost path is {} = {}".format(path_sum, min_path)
+    print("Minimum cost path is {} = {}".format(path_sum, min_path))
 
 
 # test

@@ -39,11 +39,11 @@ def find_number_of_ways_to_get_total(denominations, total):
 
 
 # test
-print find_number_of_ways_to_get_total([1], 5)  # 1
-print find_number_of_ways_to_get_total([5], 1)  # 0
-print find_number_of_ways_to_get_total([5], 0)  # 1
-print find_number_of_ways_to_get_total([2, 1, 3], 5)  # 5
-print find_number_of_ways_to_get_total([1, 2, 3], 4)  # 4
-print find_number_of_ways_to_get_total([2, 5, 3, 6], 10)  # 5
-print find_number_of_ways_to_get_total([1, 2, 5, 10], 20)  # 40
-print find_number_of_ways_to_get_total([1, 5, 10, 21, 25], 63)  # 114
+print(find_number_of_ways_to_get_total([1], 5))  # 1
+print(find_number_of_ways_to_get_total([5], 1))  # 0
+print(find_number_of_ways_to_get_total([5], 0))  # 1
+print(find_number_of_ways_to_get_total([2, 1, 3], 5))  # 5
+print(find_number_of_ways_to_get_total([1, 2, 3], 4))  # 4
+print(find_number_of_ways_to_get_total([2, 5, 3, 6], 10))  # 5
+print(find_number_of_ways_to_get_total([1, 2, 5, 10], 20))  # 40
+print(find_number_of_ways_to_get_total([1, 5, 10, 21, 25], 63))  # 114

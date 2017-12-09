@@ -46,4 +46,3 @@ str_2 = "kitten"
 dist = normalize_dist(str_1, str_2)
 
 print(dist)
-

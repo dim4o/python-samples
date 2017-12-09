@@ -24,8 +24,8 @@ def calc_total_ways(rows, cols):
 
 
 # test
-print calc_total_ways(4, 4)  # 20
+print(calc_total_ways(4, 4))  # 20
 
-print calc_total_ways(4, 1)  # 1
+print(calc_total_ways(4, 1))  # 1
 
-print calc_total_ways(4, 5)  # 35
+print(calc_total_ways(4, 5))  # 35

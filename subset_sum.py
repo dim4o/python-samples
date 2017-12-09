@@ -38,9 +38,9 @@ def find_subset_sum(arr, sum):
 def print_subset_sum(arr, sum):
     path = find_subset_sum(arr, sum)
     if path:
-        print "{} = {}".format(sum, " + ".join(str(_) for _ in path))
+        print("{} = {}".format(sum, " + ".join(str(_) for _ in path)))
     else:
-        print "There is no such subset."
+        print("There is no such subset.")
 
 
 # test

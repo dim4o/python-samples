@@ -27,7 +27,7 @@ def find_max_non_adjacent_subsequence_sum(sequence):
 
 
 # test
-print find_max_non_adjacent_subsequence_sum(sequence=[1])  # 1
-print find_max_non_adjacent_subsequence_sum(sequence=[7, 8])  # 8
-print find_max_non_adjacent_subsequence_sum(sequence=[4, 1, 1, 4, 2, 1])  # 9
-print find_max_non_adjacent_subsequence_sum(sequence=[1, 2, 9, 10, 6, 7, 12])  # 28
+print(find_max_non_adjacent_subsequence_sum(sequence=[1]))  # 1
+print(find_max_non_adjacent_subsequence_sum(sequence=[7, 8]))  # 8
+print(find_max_non_adjacent_subsequence_sum(sequence=[4, 1, 1, 4, 2, 1]))  # 9
+print(find_max_non_adjacent_subsequence_sum(sequence=[1, 2, 9, 10, 6, 7, 12]))  # 28

@@ -51,7 +51,7 @@ def find_longest_common_subseq(str_1, str_2):
             rows -= 1
 
     longest_seq.reverse()
-    print longest_seq
+    print(longest_seq)
 
 
 def print_matrix(matrix):
@@ -59,7 +59,7 @@ def print_matrix(matrix):
     Prettify the default matrix print
     """
     for i in range(len(matrix)):
-        print " ".join(str(_) for _ in matrix[i])
+        print(" ".join(str(_) for _ in matrix[i]))
 
 
 # test

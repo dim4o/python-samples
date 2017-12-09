@@ -63,10 +63,10 @@ def find_longest_palindromic_sequence(input_str):
 
 
 # test
-print find_longest_palindromic_sequence("a")  # a
-print find_longest_palindromic_sequence("abcd")  # a
-print find_longest_palindromic_sequence("abcdc")  # cdc
-print find_longest_palindromic_sequence("abaab")  # baab
-print find_longest_palindromic_sequence("agbdba")  # abdba
-print find_longest_palindromic_sequence("agbdbaga")  # agbdbga
-print find_longest_palindromic_sequence("agbddba")  # abddba
+print(find_longest_palindromic_sequence("a"))  # a
+print(find_longest_palindromic_sequence("abcd"))  # a
+print(find_longest_palindromic_sequence("abcdc"))  # cdc
+print(find_longest_palindromic_sequence("abaab"))  # baab
+print(find_longest_palindromic_sequence("agbdba"))  # abdba
+print(find_longest_palindromic_sequence("agbdbaga"))  # agbdbga
+print(find_longest_palindromic_sequence("agbddba"))  # abddba

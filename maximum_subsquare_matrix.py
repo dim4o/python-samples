@@ -35,8 +35,8 @@ def find_max_sub_square_matrix(matrix):
 
 
 # test
-print find_max_sub_square_matrix([[0, 0, 0], [0, 0, 0]])  # 0
-print find_max_sub_square_matrix([[0, 0, 0], [0, 1, 0]])  # 1
-print find_max_sub_square_matrix([[0, 0, 1, 1, 1], [1, 0, 1, 1, 1], [0, 1, 1, 1, 1], [1, 0, 1, 1, 1]])  # 3
-print find_max_sub_square_matrix(
-    [[0, 0, 1, 1, 1], [1, 0, 1, 1, 1], [0, 1, 1, 1, 1], [1, 0, 1, 1, 1], [1, 0, 1, 1, 1]])  # 3
+print(find_max_sub_square_matrix([[0, 0, 0], [0, 0, 0]]))  # 0
+print(find_max_sub_square_matrix([[0, 0, 0], [0, 1, 0]]))  # 1
+print(find_max_sub_square_matrix([[0, 0, 1, 1, 1], [1, 0, 1, 1, 1], [0, 1, 1, 1, 1], [1, 0, 1, 1, 1]]))  # 3
+print(find_max_sub_square_matrix(
+    [[0, 0, 1, 1, 1], [1, 0, 1, 1, 1], [0, 1, 1, 1, 1], [1, 0, 1, 1, 1], [1, 0, 1, 1, 1]]))  # 3

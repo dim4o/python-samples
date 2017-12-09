@@ -51,9 +51,9 @@ def get_min_number_of_coins(coin_denominations, total):
 def print_solution(coin_denominations, total):
     path = get_min_number_of_coins(coin_denominations, total)
     if len(path) > 0:
-        print "Total is {}, Denominations are {}.".format(total, list(path))
+        print("Total is {}, Denominations are {}.".format(total, list(path)))
     else:
-        print "No solution."
+        print("No solution.")
 
 
 print_solution([1, 5, 6, 8], 11)  # Total is 11, Denominations are [5, 6]

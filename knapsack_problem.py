@@ -54,14 +54,14 @@ def print_solution(solution):
             sln.append("{}({})".format(solution[i][0], solution[i][1]))
             max_wt += solution[i][0]
             max_val += solution[i][1]
-        print "{} = {}".format(" + ".join(sln), "{}({})".format(max_wt, max_val))
+        print("{} = {}".format(" + ".join(sln), "{}({})".format(max_wt, max_val)))
     else:
-        print "No solution."
+        print("No solution.")
 
 
 # test
 print_solution(get_knapsack_optimization([1, 3, 4, 5], [1, 4, 5, 7], 7))  # 4(5) + 3(4) = 7(9)
-print
+print()
 print_solution(get_knapsack_optimization([5, 4, 3, 1], [7, 5, 4, 1], 7))  # 3(4) + 4(5) = 7(9)
-print
+print()
 print_solution(get_knapsack_optimization([5, 4, 3, 10], [7, 5, 4, 1], 1))  # No solution.

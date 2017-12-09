@@ -37,10 +37,10 @@ def find_longest_increasing_seq(arr):
 
 # test
 seq_len = find_longest_increasing_seq([3, 4, -1, 0, 6, 2, 3, 6, 5])
-print seq_len  # [-1, 0, 2, 3, 6]
+print(seq_len)  # [-1, 0, 2, 3, 6]
 
-print find_longest_increasing_seq([3])  # [3]
+print(find_longest_increasing_seq([3]))  # [3]
 
-print find_longest_increasing_seq([3, 1])  # [3]
+print(find_longest_increasing_seq([3, 1]))  # [3]
 
-print find_longest_increasing_seq([3, 4])  # [3, 4]
+print(find_longest_increasing_seq([3, 4]))  # [3, 4]

@@ -44,7 +44,7 @@ def maximize_profit(rods, total_len):
         else:
             path.append(rods[rows - 1][0])
             cols -= rods[rows - 1][0]
-    print path
+    print(path)
 
 
 # test

@@ -50,4 +50,4 @@ def find_best_schedule(jobs):
 
 # test
 max_path = find_best_schedule([(2, 5, 6), (4, 6, 5), (6, 7, 4), (7, 9, 2), (1, 3, 5), (5, 8, 11)])
-print "{} -> {}".format(sum(i for i in max_path), max_path)  # 17 -> [11, 6]
+print("{} -> {}".format(sum(i for i in max_path), max_path))  # 17 -> [11, 6]
