@@ -1,5 +1,3 @@
-from sortedcollections import SortedDict
-
 graph = (
    # A  B  C  D  E
     (0, 6, 0, 1, 0),  # A
