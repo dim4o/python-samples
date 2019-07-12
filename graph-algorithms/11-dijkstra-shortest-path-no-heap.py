@@ -1,3 +1,9 @@
+"""
+This is an intuitive implementation of Dijkstra shortest path algorithm without
+minimum binary heap + map. It is not so effective but is easier to understand.
+"""
+
+
 class Graph:
     """ An util data structure that represents a graph """
     def __init__(self, edges, undirected=True):
@@ -35,7 +41,7 @@ class Graph:
         return self.vertices_set
 
 
-graph_edges = [
+graph_edges_1 = [
     ("A", "B", 6),
     ("A", "D", 1),
     ("B", "D", 2),
@@ -43,6 +49,16 @@ graph_edges = [
     ("B", "E", 2),
     ("C", "E", 5),
     ("D", "E", 1),
+]
+
+graph_edges_2 = [
+    ("A", "B", 5),
+    ("A", "D", 9),
+    ("A", "E", 2),
+    ("B", "C", 2),
+    ("C", "D", 3),
+    ("F", "D", 2),
+    ("E", "F", 3),
 ]
 
 
@@ -111,11 +127,18 @@ def get_path_to(end, result):
 
 
 # the shortest path from "A" all other vertices
-shortest_path_map = find_shortest_path(edges_list=graph_edges, start_vertex="A")
+shortest_path_map = find_shortest_path(edges_list=graph_edges_1, start_vertex="A")
 
 # prints the shortest path and distance form "A" to "C"
 shortest_pat = get_path_to("C", shortest_path_map)
 print(" -> ".join(shortest_pat[0]) + ", dist: {}".format(shortest_pat[1]))  # A -> D -> E -> C, dist: 7
+
+# the shortest path from "A" all other vertices
+shortest_path_map = find_shortest_path(edges_list=graph_edges_2, start_vertex="A")
+
+# prints the shortest path and distance form "A" to "D"
+shortest_pat = get_path_to("D", shortest_path_map)
+print(" -> ".join(shortest_pat[0]) + ", dist: {}".format(shortest_pat[1]))  # A -> E -> F -> D, dist: 7
 
 
 # for key, value in g.edges_map.items():
@@ -188,7 +211,7 @@ print(" -> ".join(shortest_pat[0]) + ", dist: {}".format(shortest_pat[1]))  # A 
 #     # print(unvisited)
 #     unvisited.remove(curr_node)
 #     result.append((curr_node, distances[curr_node]))
-#     distances.pop(curr_node)
+#     distances.extract_min(curr_node)
 #
 #     if len(unvisited) == 0:
 #         break
