@@ -4,7 +4,28 @@
 
 
 class Solution(object):
-    def can_partition(self, arr, target_sum, curr_sum, start_index):
+    def can_partition_1(self, arr, start_index, curr_sum, target_sum, map):
+        if curr_sum == target_sum:
+            return True
+
+        if curr_sum > target_sum or len(arr) == start_index:
+            return False
+
+        new_sum = curr_sum + arr[start_index]
+
+        # use a cache if it is available
+        cache = str(start_index) + str(new_sum)
+        if cache in map:
+            return map[cache]
+
+        found = self.can_partition_1(arr, start_index + 1, new_sum, target_sum, map) or \
+               self.can_partition_1(arr, start_index + 1, curr_sum, target_sum, map)
+        # add the current result to the cache
+        map[cache] = found
+        return found
+
+    def can_partition_2(self, arr, target_sum, curr_sum, start_index, map):
+
         if curr_sum == target_sum:
             return True
 
@@ -13,9 +34,18 @@ class Solution(object):
 
         for i in range(start_index, len(arr)):
             new_sum = curr_sum + arr[i]
-            found = self.can_partition(arr, target_sum, new_sum, i + 1)
+
+            # use a cache if it is available
+            cache = str(i) + str(curr_sum)
+            if cache in map:
+                return map[cache]
+
+            found = self.can_partition_2(arr, target_sum, new_sum, i + 1, map)
             if found:
                 return True
+
+            # add the current result to the cache
+            map[cache] = found
 
         return False
 
@@ -23,7 +53,7 @@ class Solution(object):
         target_sum = sum(arr)
         if target_sum % 2 == 1:
             return False
-        return self.can_partition(arr=arr, target_sum=target_sum / 2, curr_sum=0, start_index=0)
+        return self.can_partition_1(arr=arr, target_sum=target_sum / 2, curr_sum=0, start_index=0, map={})
 
 
 input_list = [17, 58, 41, 75, 61, 70, 52, 7, 38, 11, 40, 58, 44, 45, 4, 81, 67, 54, 79, 80, 15, 3, 14, 16, 9, 66, 69,
@@ -33,3 +63,5 @@ input_list = [17, 58, 41, 75, 61, 70, 52, 7, 38, 11, 40, 58, 44, 45, 4, 81, 67, 
 s = Solution()
 print(s.canPartition(input_list))
 print(s.canPartition([1, 5, 11, 5]))
+print(s.canPartition([1, 3, 5]))
+print(s.canPartition([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10]))
