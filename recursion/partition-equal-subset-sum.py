@@ -1,10 +1,11 @@
 # Given a non-empty array containing only positive integers,
 # find if the array can be partitioned into two subsets
 # such that the sum of elements in both subsets is equal.
+# see: https://leetcode.com/problems/partition-equal-subset-sum/
 
 
 class Solution(object):
-    def can_partition_1(self, arr, start_index, curr_sum, target_sum, map):
+    def can_partition_1(self, arr, start_index, curr_sum, target_sum, cache_map) -> bool:
         if curr_sum == target_sum:
             return True
 
@@ -15,16 +16,18 @@ class Solution(object):
 
         # use a cache if it is available
         cache = str(start_index) + str(new_sum)
-        if cache in map:
-            return map[cache]
+        if cache in cache_map:
+            return cache_map[cache]
 
-        found = self.can_partition_1(arr, start_index + 1, new_sum, target_sum, map) or \
-               self.can_partition_1(arr, start_index + 1, curr_sum, target_sum, map)
+        include_new_sum_decision = self.can_partition_1(arr, start_index + 1, new_sum, target_sum, cache_map)
+        do_not_include_new_sum_decision = self.can_partition_1(arr, start_index + 1, curr_sum, target_sum, cache_map)
+        found = include_new_sum_decision or do_not_include_new_sum_decision
+
         # add the current result to the cache
-        map[cache] = found
+        cache_map[cache] = found
         return found
 
-    def can_partition_2(self, arr, target_sum, curr_sum, start_index, map):
+    def can_partition_2(self, arr, target_sum, curr_sum, start_index, cache_map) -> bool:
 
         if curr_sum == target_sum:
             return True
@@ -37,15 +40,15 @@ class Solution(object):
 
             # use a cache if it is available
             cache = str(i) + str(curr_sum)
-            if cache in map:
-                return map[cache]
+            if cache in cache_map:
+                return cache_map[cache]
 
-            found = self.can_partition_2(arr, target_sum, new_sum, i + 1, map)
+            found = self.can_partition_2(arr, target_sum, new_sum, i + 1, cache_map)
             if found:
                 return True
 
             # add the current result to the cache
-            map[cache] = found
+            cache_map[cache] = found
 
         return False
 
@@ -53,7 +56,7 @@ class Solution(object):
         target_sum = sum(arr)
         if target_sum % 2 == 1:
             return False
-        return self.can_partition_1(arr=arr, target_sum=target_sum / 2, curr_sum=0, start_index=0, map={})
+        return self.can_partition_1(arr=arr, target_sum=target_sum / 2, curr_sum=0, start_index=0, cache_map={})
 
 
 input_list = [17, 58, 41, 75, 61, 70, 52, 7, 38, 11, 40, 58, 44, 45, 4, 81, 67, 54, 79, 80, 15, 3, 14, 16, 9, 66, 69,
